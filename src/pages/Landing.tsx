@@ -93,7 +93,7 @@ export default function Landing() {
           <a href="#" className="flex items-center group">
             <img 
               src="https://bundanurcatering.com/img/logo.png" 
-              alt="Bunda Nur Catering Logo" 
+              alt="Bunda Nur Catering Logo, Nasi Kotak Sidoarjo, Nasi Kotak Surabaya" 
               className="h-12 md:h-16 w-auto group-hover:scale-105 transition-transform duration-300" 
             />
           </a>
@@ -139,7 +139,7 @@ export default function Landing() {
               <div className="flex items-center">
                 <img 
                   src="https://bundanurcatering.com/img/logo.png" 
-                  alt="Bunda Nur Catering Logo" 
+                  alt="Bunda Nur Catering Logo, Nasi Kotak Sidoarjo, Nasi Kotak Surabaya" 
                   className="h-10 w-auto" 
                 />
               </div>
@@ -223,7 +223,7 @@ export default function Landing() {
             <div className="flex-1 bg-brand-border relative m-0 shadow-inner overflow-hidden flex items-center justify-center min-h-[400px] md:min-h-0">
               <img 
                 src="https://bundanurcatering.com/img/cover.jpg" 
-                alt="Bunda Nur Catering Hero" 
+                alt="Nasi Kotak Sidoarjo, Nasi Kotak Surabaya" 
                 className="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-brand-secondary/10" />
@@ -349,8 +349,8 @@ export default function Landing() {
           </div>
           <div className="relative aspect-video md:aspect-[3/4] bg-brand-border overflow-hidden grayscale-[0.2]">
             <img 
-              src="https://images.unsplash.com/photo-1547928576-a4a332358fb9?q=80&w=1000&auto=format&fit=crop" 
-              alt="Kitchen Detail" 
+              src="https://bundanurcatering.com/img/gallery/25.jpg" 
+              alt="Nasi Kotak Sidoarjo, Nasi Kotak Surabaya" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 border-[16px] md:border-[32px] border-brand-accent/50" />
@@ -430,7 +430,7 @@ export default function Landing() {
                     }}
                   />
                 </div>
-                <span className="font-sans font-semibold text-center text-[10px] uppercase tracking-wider text-gray-500 group-hover:text-brand-secondary transition-colors line-clamp-1">{client.name}</span>
+                <span className="font-sans font-semibold text-center text-[10px] uppercase tracking-wider text-gray-500 group-hover:text-brand-secondary transition-colors">{client.name}</span>
               </motion.div>
             ))}
           </div>
