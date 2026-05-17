@@ -65,6 +65,7 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={url} />
+      <link rel="icon" type="image/x-icon" href="https://bundanurcatering.com/favicon.ico" />
 
       {/* Open Graph tags */}
       <meta property="og:url" content={url} />
