@@ -90,11 +90,12 @@ export default function Landing() {
         scrolled ? "bg-white/90 backdrop-blur-md border-brand-border" : "bg-transparent border-transparent"
       )}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-serif italic text-xl group-hover:scale-110 transition-transform">B</div>
-            <span className="font-serif font-bold text-2xl tracking-tight">
-              Bunda Nur <span className="font-light text-brand-primary">Catering</span>
-            </span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src="https://bundanurcatering.com/img/logo.png" 
+              alt="Bunda Nur Catering Logo" 
+              className="h-12 md:h-16 w-auto group-hover:scale-105 transition-transform duration-300" 
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-medium text-gray-500">
@@ -135,9 +136,12 @@ export default function Landing() {
             className="fixed inset-0 z-[100] bg-white p-6 md:hidden flex flex-col"
           >
             <div className="flex items-center justify-between mb-12">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center text-white font-serif italic text-lg">B</div>
-                <span className="font-serif font-bold text-xl tracking-tight">Bunda Nur</span>
+              <div className="flex items-center">
+                <img 
+                  src="https://bundanurcatering.com/img/logo.png" 
+                  alt="Bunda Nur Catering Logo" 
+                  className="h-10 w-auto" 
+                />
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}
