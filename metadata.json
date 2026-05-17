@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Bunda Nur Catering",
+  "description": "Premium catering service in Sidoarjo since 2011. Specializing in Nasi Kotak, Tumpeng, and Aqiqah with modern online ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
