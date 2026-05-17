@@ -19,6 +19,8 @@ import {
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { menuItems, MenuItem } from '../data/menu';
+import { galleryItems, GalleryItem } from '../data/gallery';
+import { clients, Client } from '../data/clients';
 
 const formatPrice = (price: number) => {
   return new Intl.NumberFormat('id-ID', {
@@ -37,6 +39,7 @@ export default function Landing() {
   const [portion, setPortion] = useState('');
   const [date, setDate] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
   const faqs = [
     {
@@ -98,6 +101,8 @@ export default function Landing() {
             <a href="#home" className="hover:text-brand-secondary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-primary hover:after:w-full after:transition-all">Home</a>
             <a href="#about" className="hover:text-brand-secondary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-primary hover:after:w-full after:transition-all">Tentang</a>
             <a href="#menu" className="hover:text-brand-secondary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-primary hover:after:w-full after:transition-all">Menu</a>
+            <a href="#gallery" className="hover:text-brand-secondary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-primary hover:after:w-full after:transition-all">Gallery</a>
+            <a href="#clients" className="hover:text-brand-secondary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-primary hover:after:w-full after:transition-all">Client</a>
             <a href="#faq" className="hover:text-brand-secondary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-primary hover:after:w-full after:transition-all">FAQ</a>
           </div>
 
@@ -146,6 +151,8 @@ export default function Landing() {
               <a href="#home" onClick={() => setIsMenuOpen(false)} className="hover:text-brand-primary transition-colors">Home</a>
               <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-brand-primary transition-colors">Tentang Kami</a>
               <a href="#menu" onClick={() => setIsMenuOpen(false)} className="hover:text-brand-primary transition-colors">Daftar Menu</a>
+              <a href="#gallery" onClick={() => setIsMenuOpen(false)} className="hover:text-brand-primary transition-colors">Gallery</a>
+              <a href="#clients" onClick={() => setIsMenuOpen(false)} className="hover:text-brand-primary transition-colors">Client</a>
               <a href="#faq" onClick={() => setIsMenuOpen(false)} className="hover:text-brand-primary transition-colors">FAQ</a>
               <a href="#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-brand-primary transition-colors">Kontak</a>
             </div>
@@ -346,6 +353,124 @@ export default function Landing() {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-32 bg-brand-accent border-b border-brand-border">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-brand-primary font-bold text-xs uppercase tracking-widest mb-4 block">Visualisasi Cita Rasa</span>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8">Gallery Kami</h2>
+            <p className="text-gray-500 font-light leading-relaxed">
+              Terima kasih kepada para pelanggan yang telah memesan di Bunda Nur Catering. Kepuasan Anda adalah tujuan kami. 
+              Menerima pesanan aneka nasi kotak, paket nasi kuning, paket tumpeng, nasi bakar, paket ayam bakar utuh, dll. 
+              Untuk segala acara: makan siang, pesta ulang tahun, pesta pernikahan, pertemuan atau meeting.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryItems.map((item, idx) => (
+              <motion.div 
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="group relative cursor-pointer overflow-hidden aspect-[4/3] bg-brand-border"
+                onClick={() => setSelectedImage(item)}
+              >
+                <img 
+                  src={item.thumb} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-brand-secondary/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                  <h4 className="text-white font-serif font-bold text-lg mb-1">{item.title}</h4>
+                  <p className="text-white/80 text-[10px] uppercase tracking-widest">{item.footer}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Clients Section */}
+      <section id="clients" className="py-32 bg-white">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+            <div className="max-w-md">
+              <span className="text-brand-primary font-bold text-xs uppercase tracking-widest mb-4 block">Kemitraan</span>
+              <h2 className="font-serif text-4xl font-bold">Dipercaya Oleh Berbagai Instansi & Keluarga</h2>
+            </div>
+            <p className="text-gray-500 font-light max-w-xs md:text-right leading-relaxed">
+              Sejak 2011, kami telah melayani ribuan pelanggan mulai dari perkantoran hingga acara keluarga di area Sidoarjo dan Surabaya.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 opacity-60 hover:opacity-100 transition-opacity">
+            {clients.map((client, idx) => (
+              <motion.div 
+                key={client.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="flex flex-col items-center justify-center p-8 border border-brand-border hover:border-brand-primary transition-all group bg-brand-accent/30 rounded-xl"
+              >
+                <div className="h-16 w-full flex items-center justify-center mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name} 
+                    className="max-h-full max-w-full object-contain"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(client.name)}&background=random&color=fff&size=128`;
+                    }}
+                  />
+                </div>
+                <span className="font-sans font-semibold text-center text-[10px] uppercase tracking-wider text-gray-500 group-hover:text-brand-secondary transition-colors line-clamp-1">{client.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-brand-secondary/95 backdrop-blur-sm flex items-center justify-center p-6 lg:p-12"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-5xl w-full flex flex-col items-center gap-6"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-white/60 hover:text-white transition-colors"
+              >
+                <X size={32} />
+              </button>
+              <div className="w-full bg-brand-border aspect-video lg:aspect-[16/9] overflow-hidden shadow-2xl">
+                <img 
+                  src={selectedImage.image} 
+                  alt={selectedImage.title} 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="text-white font-serif text-2xl font-bold mb-2">{selectedImage.title}</h3>
+                <p className="text-white/60 text-xs uppercase tracking-[0.3em]">{selectedImage.footer}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* FAQ Section */}
       <section id="faq" className="py-32 bg-white">
