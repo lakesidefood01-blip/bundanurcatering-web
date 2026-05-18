@@ -224,7 +224,7 @@ export default function Landing() {
               <img 
                 src="https://bundanurcatering.com/img/cover.jpg" 
                 alt="Nasi Kotak Sidoarjo, Nasi Kotak Surabaya" 
-                className="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
+                className="w-full h-full object-cover grayscale-0 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-brand-secondary/10" />
               
@@ -296,7 +296,7 @@ export default function Landing() {
                 key={item.id}
                 className="group border-r border-b border-brand-border p-6 md:p-10 hover:bg-brand-accent transition-colors flex flex-col"
               >
-                <div className="aspect-square mb-6 md:mb-8 overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                <div className="aspect-square mb-6 md:mb-8 overflow-hidden transition-all duration-500">
                   <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="flex-1">
@@ -347,7 +347,7 @@ export default function Landing() {
               </div>
             </div>
           </div>
-          <div className="relative aspect-video md:aspect-[3/4] bg-brand-border overflow-hidden grayscale-[0.2]">
+          <div className="relative aspect-video md:aspect-[3/4] bg-brand-border overflow-hidden">
             <img 
               src="https://bundanurcatering.com/img/gallery/25.jpg" 
               alt="Nasi Kotak Sidoarjo, Nasi Kotak Surabaya" 
@@ -385,7 +385,7 @@ export default function Landing() {
                 <img 
                   src={item.thumb} 
                   alt={item.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-brand-secondary/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
                   <h4 className="text-white font-serif font-bold text-lg mb-1">{item.title}</h4>
@@ -420,7 +420,7 @@ export default function Landing() {
                 transition={{ delay: idx * 0.05 }}
                 className="flex flex-col items-center justify-center p-8 border border-brand-border hover:border-brand-primary transition-all group bg-brand-accent/30 rounded-xl"
               >
-                <div className="h-16 w-full flex items-center justify-center mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">
+                <div className="h-16 w-full flex items-center justify-center mb-4 transition-all duration-500">
                   <img 
                     src={client.logo} 
                     alt={client.name} 
