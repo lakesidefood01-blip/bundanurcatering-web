@@ -420,7 +420,7 @@ export default function Landing() {
                 transition={{ delay: idx * 0.05 }}
                 className="flex flex-col items-center justify-center p-8 border border-brand-border hover:border-brand-primary transition-all group bg-brand-accent/30 rounded-xl"
               >
-                <div className="h-16 w-full flex items-center justify-center mb-4 transition-all duration-500">
+                <div className="h-24 w-full flex items-center justify-center mb-4 transition-all duration-500">
                   <img 
                     src={client.logo} 
                     alt={client.name} 
